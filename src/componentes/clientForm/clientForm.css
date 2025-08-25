@@ -1,0 +1,26 @@
+.client-form .grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.client-form textarea {
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--gray-300);
+  background: white;
+  outline: none;
+}
+
+.form-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+@media (max-width: 720px) {
+  .client-form .grid {
+    grid-template-columns: 1fr;
+  }
+}

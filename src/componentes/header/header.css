@@ -1,0 +1,91 @@
+.vc-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: linear-gradient(to right, var(--blue-500), var(--blue-700));
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: white;
+  color: var(--blue-500);
+  font-weight: 700;
+  box-shadow: var(--shadow);
+  font-size: 35px;
+}
+
+.titles h1 {
+  margin: 0;
+  font-size: 20px;
+  color: white;
+}
+
+.titles span {
+  font-size: 12px;
+  color: white;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--blue-50);
+  border: 1px solid var(--blue-100);
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+.search input {
+  border: 0;
+  background: transparent;
+  outline: none;
+  min-width: 220px;
+}
+
+@media (max-width: 640px) {
+  .header-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 35px;
+  }
+
+  .actions {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .search {
+    flex: 1;
+  }
+
+  .search input {
+    min-width: unset;
+    width: 100%;
+  }
+}

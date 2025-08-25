@@ -1,0 +1,17 @@
+.app main{
+  padding:24px 0 64px;
+}
+
+.content{
+  padding:20px;
+}
+
+.delete-confirm p{
+  margin: 12px 0 24px;
+}
+
+.delete-confirm .actions{
+  display:flex;
+  gap:12px;
+  justify-content:flex-end;
+}

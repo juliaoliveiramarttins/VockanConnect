@@ -1,0 +1,42 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, .35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 50;
+}
+
+.modal {
+  width: min(720px, 96%);
+  padding: 18px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  /* alterado de left para right */
+  border: 0;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #ef4444;
+  transform: scale(1.1);
+}
+
+.modal-title {
+  margin: 0 0 10px 0;
+  padding-left: 26px;
+}
+
+.modal-body {
+  padding-left: 26px;
+  padding-right: 6px;
+}

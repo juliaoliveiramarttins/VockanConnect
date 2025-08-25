@@ -1,0 +1,379 @@
+/* table.css - Tabela Responsiva com Modal */
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--gray-200);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-300) transparent;
+  position: relative;
+}
+
+.table-wrap::-webkit-scrollbar {
+  height: 6px;
+}
+
+.table-wrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-wrap::-webkit-scrollbar-thumb {
+  background-color: var(--gray-300);
+  border-radius: 3px;
+}
+
+.vc-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  table-layout: auto;
+  min-width: 700px;
+}
+
+.vc-table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--blue-50);
+  text-align: left;
+  padding: 12px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--gray-200);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.vc-table tbody td {
+  padding: 12px;
+  border-bottom: 1px solid var(--gray-100);
+  max-width: 250px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+}
+
+.contact-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  white-space: nowrap;
+  min-width: 180px;
+}
+
+.contact-email {
+  font-weight: 500;
+  color: var(--gray-800);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-phone {
+  font-size: 0.9em;
+  color: var(--gray-600);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.vc-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.vc-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: var(--gray-600);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  white-space: nowrap;
+  min-width: 100px;
+}
+
+.icon {
+  border: 1px solid var(--gray-300);
+  background: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.icon:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon.danger {
+  border-color: #fecaca;
+  color: #ef4444;
+}
+
+.icon.danger:hover {
+  background: #fef2f2;
+}
+
+/* Estilos para visualização móvel */
+.mobile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0;
+}
+
+.mobile-item {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-item:hover {
+  background: #fafcff;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-name {
+  font-weight: 600;
+  color: var(--gray-800);
+  font-size: 16px;
+}
+
+.mobile-arrow {
+  color: var(--gray-400);
+  font-size: 14px;
+}
+
+.empty-mobile {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--gray-600);
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+}
+
+/* Estilos do Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  animation: modalSlideUp 0.3s ease;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 0 20px;
+  border-bottom: 1px solid var(--gray-200);
+  margin-bottom: 20px;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--gray-800);
+  padding-bottom: 16px;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: var(--gray-500);
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background: var(--gray-100);
+  color: var(--gray-700);
+}
+
+.modal-body {
+  padding: 0 20px 20px 20px;
+}
+
+.modal-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.modal-field label {
+  font-weight: 600;
+  color: var(--gray-700);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.modal-field span {
+  color: var(--gray-800);
+  font-size: 15px;
+  word-break: break-word;
+}
+
+.modal-actions {
+  padding: 16px 20px 20px 20px;
+  border-top: 1px solid var(--gray-200);
+  display: flex;
+  gap: 12px;
+}
+
+.modal-btn {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.modal-btn.edit {
+  background: var(--blue-600, #2563eb);
+  color: white;
+}
+
+.modal-btn.edit:hover {
+  background: var(--blue-700, #1d4ed8);
+}
+
+.modal-btn.delete {
+  background: #ef4444;
+  color: white;
+}
+
+.modal-btn.delete:hover {
+  background: #dc2626;
+}
+
+.modal-btn.restore {
+  background: var(--green-600, #059669);
+  color: white;
+}
+
+.modal-btn.restore:hover {
+  background: var(--green-700, #047857);
+}
+
+/* Indicador visual de scroll */
+.table-wrap::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.8), transparent);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.table-wrap.has-scroll::after {
+  opacity: 1;
+}
+
+/* Media queries para tablets */
+@media (max-width: 1024px) {
+  .vc-table {
+    min-width: 600px;
+  }
+
+  .vc-table thead th,
+  .vc-table tbody td {
+    padding: 10px;
+  }
+}
+
+/* Media queries para telas menores que mobile */
+@media (max-width: 480px) {
+  .modal-content {
+    margin: 8px;
+    border-radius: 12px;
+  }
+
+  .modal-header {
+    padding: 16px 16px 0 16px;
+  }
+
+  .modal-body {
+    padding: 0 16px 16px 16px;
+  }
+
+  .modal-actions {
+    padding: 16px;
+    flex-direction: column;
+  }
+
+  .modal-btn {
+    width: 100%;
+  }
+
+  .mobile-item {
+    padding: 12px;
+  }
+
+  .mobile-name {
+    font-size: 15px;
+  }
+}

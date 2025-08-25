@@ -1,0 +1,19 @@
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--gray-300);
+  background: white;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: var(--blue-600);
+  color: white;
+  border-color: transparent;
+}
