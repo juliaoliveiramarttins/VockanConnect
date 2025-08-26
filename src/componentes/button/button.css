@@ -2,7 +2,7 @@
   border: 0;
   border-radius: 12px;
   padding: 10px 14px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   transition: transform .02s ease, box-shadow .2s ease, background .2s ease;
   box-shadow: var(--shadow);
@@ -22,18 +22,27 @@
 }
 
 .btn-primary {
-  background: rgb(0, 98, 255);
-  color: white;
-  border: 2px solid white;
+  background: #facc15;
+  /* amarelo vibrante */
+  color: #1e293b;
+  /* quase preto */
 }
 
 .btn-primary:hover {
-  background: rgb(2, 196, 2);
+  background: #eab308;
+  /* amarelo escuro */
 }
+
 
 .btn-ghost {
   background: white;
   border: 1px solid var(--gray-300);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-ghost:hover {
+  color: red;
+  border-color: red;
 }
 
 .btn-danger {
