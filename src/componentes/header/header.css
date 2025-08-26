@@ -28,7 +28,7 @@
   display: grid;
   place-items: center;
   background: white;
-  color: var(--blue-500);
+  color: var(--blue-600);
   font-weight: 700;
   box-shadow: var(--shadow);
   font-size: 35px;
